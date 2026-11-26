@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Management Foundation — Vòng Đời Dự Án Theo André Dechange</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/studio.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar Backdrop (Mobile) -->
+    <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar" aria-label="Điều hướng khóa học">
+      <div class="sidebar-header">
+        <div class="brand-mark">PM</div>
+        <div>
+          <div class="brand-title">PM Foundation Hub</div>
+          <div class="brand-sub">Theo sách André Dechange</div>
+        </div>
+      </div>
+
+      <div class="sidebar-progress">
+        <div class="progress-meta">
+          <span>Tiến độ hoàn thành</span>
+          <strong id="progressPercent">0%</strong>
+        </div>
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <nav id="sidebarNav" class="sidebar-nav"></nav>
+
+      <div class="sidebar-footer">
+        <button id="exportProgressBtn" title="Sao lưu tiến độ & ghi chú ra file JSON">Sao lưu JSON</button>
+        <button id="importProgressBtn" title="Khôi phục tiến độ từ file JSON">Khôi phục</button>
+        <input type="file" id="importFileInput" accept=".json" style="display:none">
+      </div>
+    </aside>
+
+    <!-- Main Area -->
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="menuToggle" class="menu-toggle" aria-label="Mở menu">☰</button>
+          <div id="breadcrumb" class="breadcrumb">Tổng quan / <strong>Vòng đời dự án</strong></div>
+        </div>
+        <div class="topbar-actions">
+          <button id="searchTrigger" class="search-trigger" title="Tìm kiếm nhanh (Ctrl + K)">
+            <span>🔍</span>
+            <span class="search-label">Tìm bài học, thuật ngữ...</span>
+            <span class="kbd">Ctrl K</span>
+          </button>
+          <button id="themeToggle" class="icon-btn" title="Đổi giao diện Sáng / Tối" aria-label="Đổi giao diện">🌙</button>
+        </div>
+      </header>
+
+      <main id="appContent" class="content-wrapper" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <!-- Global Quick Search Modal -->
+  <div id="searchModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Tìm kiếm nhanh">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <span>🔍</span>
+        <input id="searchInput" type="text" placeholder="Gõ từ khóa: WBS, Critical Path, EVM, MTA, Abnahme, Hybrid, Scrum..." autocomplete="off">
+        <span class="kbd">ESC</span>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts (Classic deferred scripts — 100% file:// compatible, no CORS issues) -->
+  <script defer src="js/namespace.js"></script>
+  <script defer src="js/project-store.js"></script>
+  <script defer src="js/data/lifecycle.js"></script>
+  <script defer src="js/data/modules.js"></script>
+  <script defer src="js/data/casestudy.js"></script>
+  <script defer src="js/data/templates.js"></script>
+  <script defer src="js/data/quizzes.js"></script>
+  <script defer src="js/data/scenarios.js"></script>
+  <script defer src="js/studio/stage1-initiation.js"></script>
+  <script defer src="js/studio/stage2-planning.js"></script>
+  <script defer src="js/studio/stage3-execution.js"></script>
+  <script defer src="js/studio/stage4-handover.js"></script>
+  <script defer src="js/labs/stacey-lab.js"></script>
+  <script defer src="js/labs/triangle-lab.js"></script>
+  <script defer src="js/labs/stakeholder-lab.js"></script>
+  <script defer src="js/labs/cpm-lab.js"></script>
+  <script defer src="js/labs/evm-mta-lab.js"></script>
+  <script defer src="js/labs/warroom-lab.js"></script>
+  <script defer src="js/labs/drills-lab.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/app.js"></script>
+</body>
+</html>
